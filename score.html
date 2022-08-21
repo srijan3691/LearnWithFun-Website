@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background: url("/MathsQuizImages/scorebg.jpeg") ;
+        }
+        h1{
+            background-color: #000;
+        }
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="MathsQuizCss/mathsQuiz.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="container">
+        <div id="end" class="flex-center flex-column">
+            <h1 id="finalScore"></h1>
+            <h2 id="comment"></h2>
+            <br>
+            <br>
+            <br>
+            <form class="end-form-container">
+                <input type="text" name="name" id="username" placeholder="enter your name!">
+            </form>
+            <br>
+            <div id="timeStamp" > timeStamp</div>
+            <br>
+            <br>
+            <br>
+            <button class="btn" id="saveScoreBtn" type="submit"
+            onclick="saveHighScore(event)"disabled>Save</button>
+            <a href="mathematicsQuiz.html" class="btn">Play Again</a>
+            <a href="index.html" class="btn">Go Home <i class="fas fa-home"></i> </a>
+        </div>
+    </div>
+    <script src="mathsQuiz.js/end.js"></script>
+   
+</body>
+</html>

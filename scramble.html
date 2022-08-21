@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+</html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ScrambleCss/scramble.css">
+
+    <title>UNSCRAMBLE THE WORDS</title>
+</head>
+
+<body>
+
+    <div>
+
+
+        <div id="container2" class="glow">
+            <div id="heading">
+                <h1>LET'S UNSCRAMBLE THE WORDS</h1>
+            </div>
+            <div id="wordcontent">
+                <div id="wordshow">
+                    <div class="sh">
+                        <h2 class="wordss" style="padding: 0em 0.5em 0 3.6em;"> </h2><br>
+                    </div>
+                    <p class="timee">TIME LEFT: <span ID="time"></span></p>
+                    <div class="timebar1">
+                        <div class="timebar2"></div>
+                    </div>
+                    <P class="hints" style="font-weight: bolder;"> </P>
+
+                    <div>
+                        <h3 style="color: #0033cc;">Enter the word:</h3>
+                        <input type="input" placeholder="Enter your answer" id="screen"></input><br>
+                        <br>
+                        <button class="bts" id="Showhint" onclick="showHint()">Show Hint</button>
+
+                        <button class="bts" id="Change" onclick="refresh()">Change word</button><br><br>
+                        <button class="bts" id="Submit" onclick="check()">Submit</button>
+                        <button class="bts" id="ShowCorrectAnswer" onclick="ShowCorrectAnswer()">Show Correct
+                            Answer</button>
+                        <p class="result" id="result_right"> &#10004; CORRECT ANSWER!!!<br>
+                            <span class="emoji">&#129395;</span>
+                        </p>
+                        <p class="result" id="result_wrong"> &#10008; WRONG ANSWER!!!<br>
+                            <span class="emoji"> &#128557;</span>
+                        </p>
+                        <p class="CorrectAnswershow" id="CorrectAnswer"></p>
+                        <p id="timeOverMsg">Better Luck Next Time!!! <br><span class="emoji">&#128532;</span></p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div><br><br>
+    <div id="container1">
+        <div id="scoreheading">
+            <span id="score">Score</span>
+            <div id="marksshow">
+                <span id="marks"></span>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    <script>
+
+        const w = [
+            {
+                word: "address",
+                hint: "HINT: A description of the location of a person or organization."
+            },
+            {
+                word: "century",
+                hint: "HINT: A period of 100 years."
+            }, {
+                word: "fiction",
+                hint: "HINT: literature consisting of imaginative stories and characters."
+            }, {
+                word: "example",
+                hint: "HINT: One that is representative of a group as a whole."
+            }, {
+                word: "quality",
+                hint: "HINT:An inherent or distinguishing characteristic."
+            }, {
+                word: "mystery",
+                hint: "HINT: One that is not fully understood or that baffles the understanding."
+            }, {
+                word: "charity",
+                hint: "HINT: Something given to help the need."
+            }, {
+                word: "precise",
+                hint: "HINT: Clearly expressed or delineated."
+            }, {
+                word: "venture",
+                hint: "HINT: An undertaking that is dangerous,or of uncertain outcome."
+            }, {
+                word: "welcome",
+                hint: "HINT: Received with pleasure and hospitality into one's company or home."
+            }, 
+            {
+                word: "engage",
+                hint: "HINT: Consume all of one's attention or time."
+            },
+             {
+                word: "constant",
+                hint: "HINT: A quantity that does not vary"
+            }
+            , {
+                word: "attitude",
+                hint: "HINT: A complex mental state involving beliefs and feelings."
+            }
+            , {
+                word: "appoint",
+                hint: "HINT: Assign a duty, responsibility, or obligation to."
+            }
+            , {
+                word: "esteem",
+                hint: "HINT: The condition of being honored."
+            }
+            , {
+                word: "advocate",
+                hint: "HINT: A person who pleads for a person, cause, or idea."
+            }
+            , {
+                word: " constitute",
+                hint: "HINT: Compose or represent."
+            }
+            , {
+                word: "majority",
+                hint: "HINT: More than half of the votes in an election."
+            }
+
+        ]
+        var wordText = document.querySelector(".wordss");
+        var hintText = document.querySelector(".hints");
+        var ip = document.querySelector("#screen");
+        var resultRight = document.querySelector("#result_right");
+        var resultWrong = document.querySelector("#result_wrong");
+        var correct = document.querySelector("#CorrectAnswer");
+        var timeOverMessage = document.querySelector("#timeOverMsg");
+        var markshow = document.querySelector("#marks");
+        var randomObj, timer, marks_count = 0, f = 0;
+
+        //timer
+        var barClock = document.querySelector(".timebar2");
+        var clock = document.querySelector("#time");
+        var flag = 0;
+        const clk = () => {
+
+            clock.innerHTML = "60s";
+            clearInterval(timer);
+            var t =60;
+            timer = setInterval(() => {
+
+                progress = t / 60 * 100;
+                settimecolor(t);
+                if (t > 0) {
+                    t--;
+                    clock.innerHTML = t + "s";
+                    barClock.style.width = progress + "%";
+                }
+                else {
+                    clock.innerHTML = "Time Out";
+                    barClock.style.width = "0%";
+                    
+                    clearInterval(timer);
+                    ShowCorrectAnswer();
+                    timeOverMessage.style.display = "block";
+                    //var  timeout = setTimeout(refresh ,15000);
+
+
+                }
+
+            }, 1000);
+        }
+
+
+        const refresh = () => {
+            if (f != 3) {
+             
+                clk();
+                flag=0;
+                markshow.innerHTML = marks_count;
+                document.getElementById("Submit").disabled = false;
+                document.getElementById("ShowCorrectAnswer").disabled = false;
+                document.getElementById("Showhint").disabled = false;
+
+                randomObj = w[Math.floor(Math.random() * w.length)];
+                let wordArr = randomObj.word.split("");
+                
+                for (let i = wordArr.length - 1; i > 0; i--) {
+                    let j = Math.floor(Math.random() * (i + 1));
+                    [wordArr[i], wordArr[j]] = [wordArr[j], wordArr[i]];
+
+                }
+                wordText.innerHTML = wordArr.join(" ");
+                hintText.style.display = "none";
+                document.getElementById('screen').value = '';
+                correct.style.display = "none";
+                resultRight.style.display = "none";
+                resultWrong.style.display = "none";
+                timeOverMessage.style.display = "none";
+            }
+            else {window.open('game over.html', '_self') }
+
+        }
+        refresh();
+
+        function showHint() {
+            flag=flag+1;
+            hintText.style.display = "block";
+            hintText.innerHTML = randomObj.hint;
+            console.log(hintText.style.display = "block");
+
+        }
+
+        function check() {
+            var entered_data = ip.value.toLocaleLowerCase();
+            resultRight.style.display = "none";
+            resultWrong.style.display = "none";
+
+            if (entered_data == randomObj.word) {
+                resultRight.style.display = "block";
+                document.getElementById("ShowCorrectAnswer").disabled = true;
+                document.getElementById("Submit").disabled = true;
+                clearInterval(timer);
+                if (flag == 0)
+                    marks_count += 5;
+                else
+                    marks_count += 3;
+
+                markshow.innerHTML = marks_count;
+
+            }
+            else {
+                resultWrong.style.display = "block";
+
+            }
+        }
+        function ShowCorrectAnswer() {
+            f=f+1;
+            var s = randomObj.word;
+            s = s.toUpperCase();
+            correct.innerHTML = "ANSWER: " + s;
+            correct.style.display = "BLOCK";
+            document.getElementById("Submit").disabled = true;
+            document.getElementById("ShowCorrectAnswer").disabled = true;
+            document.getElementById("Showhint").disabled = true;
+            clearInterval(timer);
+
+
+        }
+
+
+
+
+
+        function settimecolor(progress) {
+
+            if (progress <= 60 && progress > 45)
+                barClock.style.background = "rgb(163, 236, 28)";
+            if (progress <= 45 && progress > 25)
+                barClock.style.background = "yellow";
+            if (progress <= 25 && progress > 10)
+                barClock.style.background = "orange";
+            if (progress <= 10)
+                barClock.style.background = "red";
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

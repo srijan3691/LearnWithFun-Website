@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Problem Solving</title>
+     <link rel="stylesheet" href="MathsQuizCss/percentage.css">
+     <link rel="stylesheet" href="MathsQuizCss/mathsQuiz.css">
+</head>
+<body>
+    <audio id="myAudio">
+        <source src="wrong.mp3">
+      </audio>
+    
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <div id="disBar">
+                <div class="disBar-item">
+                    <p id="progressText" class="disBar-prefix">
+                           question     
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
+                </div>
+                <div class="disBAr-item">
+                    <p class="result" id="result_right"> &#10004; CORRECT ANSWER!!!<br>
+                        <span class="emoji">&#129395;</span>
+                    </p>
+                    <p class="result" id="result_wrong"> &#10008; WRONG ANSWER!!!<br>
+                        <span class="emoji"> &#128557;</span>
+                    </p>
+                </div>
+                <div class="disBar-item">
+                    <p class="disBar-prefix">score</p>
+                    <h1 class="disBar-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h1 id="question">Coose an option as the correct answer for this question</h1>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">choice</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2">choice 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3">choice 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4">choice 4</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="mathsQuiz.js/percentage.js"></script>
+</body>
+</html>

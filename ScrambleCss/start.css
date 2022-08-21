@@ -1,0 +1,134 @@
+body {
+    background-color: white;
+    background-image: url('../ScrambleImages/back.jpg');
+    stroke-opacity: calc(0.2);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+
+}
+
+.container1 {
+    color: white;
+
+    background: black;
+    border: #08d329 4px outset;
+    font-family: 'Bubblegum Sans';
+    border-radius: 15px;
+    padding: 3.5em;
+    padding-top: 2.5em;
+}
+
+.bts {
+    background-color:
+
+        #fff261;
+    border-style: 1px #f01818fd;
+    padding: 15px;
+    font-size: 2em;
+    color: #f01818fd;
+    ;
+    font-weight: bolder;
+    border-radius: 15px 15px;
+    box-shadow: 0 3px #999;
+
+}
+
+.bts:hover {
+    background-color: #66ff99;
+}
+
+.bts:active {
+    background-color: #66ff99;
+    box-shadow: 0 8px #009936;
+    transform: translateY(4px);
+}
+
+body {
+    margin: 0;
+}
+
+/*BACKGROUND*/
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/*BACKGROUND*/
+
+
+
+/*GLOW TEXT*/
+.glow {
+    font-weight: bolder;
+    font-size: 4em;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 12px #62ff4d, 0 0 15px #19d341, 0 0 20px #14ee26d5, 0 0 40px #1a66ff;
+    }
+
+    to {
+        text-shadow: 0 0 12px #62ff4d, 0 0 15px #19d341, 0 0 20px #14ee26d5, 0 0 40px #1a66ff, 0 0 50px #002b80;
+    }
+}
+
+/*GLOW TEXT*/
+
+
+
+.imp {
+    color: rgb(247, 35, 7);
+    
+}
+
+.rules {
+    font-weight: bolder;
+    font-size: 2em;
+
+    text-shadow: 5px 5px #f4fdf2;
+    font-family: 'Noto Sans', sans-serif;
+    color: #f01818e5;
+    -webkit-text-stroke: 1px #ffff00;
+    text-shadow: 0px 2px 2px #ffff00;
+}
+
+
+.points {
+    font-size: 1.3em;  
+    
+}

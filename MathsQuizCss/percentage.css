@@ -1,0 +1,113 @@
+body {
+    background-image: url("../MathsQuizImages/bgmaths.jpg" );
+    background-color: #cccccc;
+    }
+     #question{
+      background: #23d5ab ;
+     }
+    .choice-container {
+      display: flex;
+      margin-bottom: 0.8rem;
+      width: 100%;
+      border-radius: 4px;
+      background: #23d5ab;
+      font-size: 3rem;
+      min-width: 80rem;
+   
+    }
+    .choice-container:hover {
+      cursor: pointer;
+      box-shadow: 0 0.6rem 1.5rem 0 rgba(6,189,257,0.6);
+      transform: scale(1.05);
+      transform: transform 100ms;
+    }
+    .choice-prefix{
+      color: #fff;
+      padding: 2rem 2.5rem;
+    }
+    .choice-text{
+      padding: 2rem;
+      width: 100%;
+    }
+    .correct{
+      background: linear-gradient(32deg, rgba(11,223,36)0%,rgba(41, 232, 111)100%);
+    }
+    .incorrect{
+      background: linear-gradient(32deg, rgb(188, 31, 29)0%,rgb(230, 21, 13,1)100%);
+    }
+    #disBar{
+      display: flex;
+      justify-content: space-between;
+      
+    }
+   #question{
+    background-color: rgba(216, 114, 135,0.5);
+    font-size: 3rem;
+    color: black;
+   }
+    .disBar-prefix{
+      text-align: center;
+      font-size: 3rem;
+      color: rgb(16, 225, 236);
+    }
+    .disBar-main-text{
+      text-align: center;
+    }
+  
+    #progressBar{
+      width: 28rem;
+      height: 3rem;
+      border: 0.4rem solid rgb(4, 175, 21);
+      margin-top: 2rem;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    #progressBarFull{
+      height: 100%;
+      background: #23d5ab;
+      width: 0%;
+  
+    }
+    .disBar-item{
+      border: #23d5ab;
+      background-color: rgba(255, 0, 0, 0.2);
+      padding: 1rem;
+    }
+    #result_right {
+      font-size: 6rem;
+      text-shadow: 5px 5px 15px rgb(107, 180, 107),
+          -5px 5px 15px rgb(81, 134, 81),
+          -5px -5px 15px rgb(103, 168, 103),
+          5px -5px 15px rgb(86, 155, 95);
+      color: rgb(92, 252, 0);
+      display: none;
+      text-align: center;
+  }
+  
+  #result_wrong {
+      font-size: 6rem;
+      text-shadow: 5px 5px 15px rgba(133, 9, 9, 0.945),
+          -5px 5px 15px rgba(204, 73, 73, 0.945),
+          -5px -5px 15px rgba(185, 51, 51, 0.945),
+          5px -5px 15px rgba(153, 61, 61, 0.945);
+      color: rgba(243, 13, 13, 0.945);
+      display: none;
+      text-align: center;
+  }
+  /*timer is still not added . this is for future purposes*/
+  #timeOverMsg {
+    font-size: 2em;
+    color: red;
+    font-weight: bolder;
+    display: none;
+  }
+  
+  
+    @media screen and (max-width: 760px) {
+      .choice-container{
+          min-width: 40rem;
+      }
+      
+    }
+  
+    
