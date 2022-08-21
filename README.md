@@ -1,7 +1,7 @@
 # LearnWithFun-Website
 
 LearnWithFun is an online educational website for kids to enhance their reading skill and boost their interest on study.
-It combines unique learning strategies, inspiring resources and innovative tools build by @srijan3691, @Debmallya Pathak, @SanghitaKundu.
+It combines unique learning strategies, inspiring resources.
 
 
 ## Object
