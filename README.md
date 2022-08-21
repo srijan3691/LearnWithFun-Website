@@ -11,9 +11,9 @@ It combines unique learning strategies, inspiring resources and innovative tools
 - Learning to be satisfying, fulfilling and rewarding.
 ## Authors
 
-- [@SanghitaKundu](https://www.github.com/octokatherine)
-- [@DFun-programming](https://www.github.com/octokatherine)
-- [@srijan3691](https://www.github.com/octokatherine)
+- [@Sanghita Kundu](https://github.com/SanghitaKundu)
+- [@Debmallya Pathak](https://github.com/DFun-programming)
+- [@Srijan Saha](https://github.com/srijan3691)
 
 
 ## Languages
